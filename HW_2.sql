@@ -25,7 +25,7 @@ Select * from classicmodels.customers
 Where country = 'Australia';
 
 -- show First and Last name of customers in Melbourne
-Select customerName, contactLastName from classicmodels.customers
+Select contactFirstName, contactLastName from classicmodels.customers
 where city = 'Melbourne';
 
 -- show all customers with Credit Limit over $200,000
@@ -37,27 +37,27 @@ Select firstName, lastName from classicmodels.employees
 where jobTitle like '%President%';
 
 -- how many Sales Reps are in the company?
-Select * from classicmodels.employees
-where jobTitle like '%Sales Rep%';
+Select count(*) from classicmodels.employees
+where jobTitle = 'Sales Rep';
 
 -- show payments in descending order
 Select * from classicmodels.payments
 order by amount desc;
 
 -- what was the check# for the payment done on December 17th 2004
-Select checkNumber from classicmodels.payments
+Select checkNumber, paymentDate from classicmodels.payments
 where paymentDate = '2004-12-17';
 
 -- show product line with the word 'realistic' in the description
-select productLine from classicmodels.productlines
-where textDescription like '%realistic%'; 
+select productLine, textDescription from classicmodels.productlines
+where textDescription like '%realistic %'; 
 
 -- show product name for vendor 'Unimax Art Galleries'
-select productName from classicmodels.products
+select productName, productVendor from classicmodels.products
 where productVendor = 'Unimax Art Galleries';
 
 -- what is the customer number for the highest amount of payment
-select customerNumber from classicmodels.payments
+select customerNumber, amount from classicmodels.payments
 order by amount desc
 limit 1;
 
