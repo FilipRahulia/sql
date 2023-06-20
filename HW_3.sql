@@ -55,5 +55,13 @@ select * from mywork.dept where city = 'Atlanta';
 
 -- Write sql 
 -- 	1. What is the first name of the author with the last name Swanson?
+select first_name, last_name from library_simple.author
+where last_name = 'Swanson';
+
 -- 	2. How many pages are in Men Without Fear book?
+select name, page_num from library_simple.book
+where name = 'Men Without Fear';
+
 -- 	3. Show all book categories that start with with letter 'W'
+select * from library_simple.category
+where name like 'w%';
