@@ -37,10 +37,12 @@ alter table mywork.dept add column country varchar (30);
 alter table mywork.dept rename column loc to city;
 
 -- 	5. Add three more departments: HR, Engineering, Marketing
-insert into  mywork.dept (deptno, dname) values (5, 'HR');
-insert into  mywork.dept (deptno, dname) values (6, 'engeneering');
-insert into  mywork.dept (deptno, dname) values (7, 'marketing');
-select * from mywork.dept;
+insert into  mywork.dept (deptno, dname, city) values 
+(5, 'HR', 'San Francisko'),
+(6, 'engeneering', 'New York'),
+(7, 'marketing', 'San Diego');
+-- select * from mywork.dept;
+-- 
 
 -- 	6. Write sql statement to show which department is in Atlanta
 select * from mywork.dept where city = 'Atlanta';
